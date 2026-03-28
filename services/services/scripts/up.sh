@@ -9,4 +9,4 @@ for arg in "$@"; do
 done
 
 echo "🟢 Using compose file: $COMPOSE_FILE and env: $ENV_FILE"
-docker-compose -f "$COMPOSE_FILE" --env-file "$ENV_FILE" up -d "$@"
+docker compose -f "$COMPOSE_FILE" --env-file "$ENV_FILE" up -d "$@"

@@ -25,10 +25,16 @@ zinit light zsh-users/zsh-autosuggestions
 fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
 
 autoload -U  compinit && compinit
-
+export UID=$(id -u)
+export GID=$(id -g)
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
-# Theme
+export PATH="$HOME/.local/bin:$PATH"
+
+export PATH="/home/linuxbrew/.linuxbrew/opt/python@3.13/bin:$PATH"
+export LDFLAGS="-L/home/linuxbrew/.linuxbrew/opt/tcl-tk/lib"
+export CPPFLAGS="-I/home/linuxbrew/.linuxbrew/opt/tcl-tk/include"
+export PKG_CONFIG_PATH="/home/linuxbrew/.linuxbrew/opt/tcl-tk/lib/pkgconfig" Theme
 # ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Uncomment one of the following lines to change the auto-update behavior
@@ -81,8 +87,7 @@ alias dkmysql="sudo docker start mysql-container "
 alias dkredis="sudo docker start redis "
 alias dkmongo="sudo docker start mongodb_container "
 alias backup_brew="brew bundle dump --file=~/Brewfile --force --no-vscode || echo 'backup success' "
-
-
+   
 ## Eza
 alias ls='eza --icons ' # Basic replacement for ls with eza --icons 
 alias l='eza --icons  --long -bF' # Extended details with binary sizes and type indicators

@@ -7,7 +7,7 @@ shift 2
 echo "🔴 Stopping services using: $COMPOSE_FILE with env: $ENV_FILE"
 
 if [ "$#" -eq 0 ]; then
-  docker-compose -f "$COMPOSE_FILE" --env-file "$ENV_FILE" down
+  docker compose -f "$COMPOSE_FILE" --env-file "$ENV_FILE" down
 else
-  docker-compose -f "$COMPOSE_FILE" --env-file "$ENV_FILE" stop "$@"
+  docker compose -f "$COMPOSE_FILE" --env-file "$ENV_FILE" stop "$@"
 fi

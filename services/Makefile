@@ -17,6 +17,9 @@ POSTGRES_ENV=./services/docker-compose/postgresql/.env
 JENKINS_COMPOSE=./services/docker-compose/jenkins/docker-compose.yml
 JENKINS_ENV=./services/docker-compose/jenkins/.env
 
+WP_COMPOSE=./services/docker-compose/wp/docker-compose.yml
+WP_ENV=./services/docker-compose/wp/.env
+
 # MySQL
 mysql_up:
 	bash services/scripts/up.sh ${MYSQL_COMPOSE} ${MYSQL_ENV}
@@ -58,3 +61,10 @@ jenkins_up:
 
 jenkins_stop:
 	bash services/scripts/stop.sh ${JENKINS_COMPOSE} ${JENKINS_ENV}
+
+# WP
+wp_up:
+	bash services/scripts/up.sh ${WP_COMPOSE} ${WP_ENV}
+
+wp_stop:
+	bash services/scripts/stop.sh ${WP_COMPOSE} ${WP_ENV}
